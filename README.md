@@ -1,2 +1,2 @@
 # CanadianTire scraper
-canadiantire.gov - scraper written using Scrapy framework 
+canadiantire.ca - scraper written using Scrapy framework 
