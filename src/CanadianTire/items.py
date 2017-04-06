@@ -8,7 +8,21 @@
 import scrapy
 
 
-class CanadiantireItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class CanadianTireProduct(scrapy.Item):
+    url = scrapy.Field()
+    image_url = scrapy.Field()
+    pCode = scrapy.Field()
+    sku_id = scrapy.Field()
+    part_number = scrapy.Field()
+    size = scrapy.Field()
+    product_name = scrapy.Field()
+    price = scrapy.Field()
+    sale_price = scrapy.Field()  # if not on sale then None
+    rating = scrapy.Field()
+    product_number = scrapy.Field()  # as displayed on website
+
+    def __init__(self, *args, **kwargs):
+        super(CanadianTireProduct, self).__init__(*args, **kwargs)
+        # some defaults
+        self.setdefault('sale_price', None)
+        self.setdefault('rating', 0)
